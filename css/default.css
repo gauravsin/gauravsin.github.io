@@ -1,33 +1,34 @@
 /*
 =====================================================================
-*   Ceevee v1.0 Default Stylesheet
+*   Keep It Simple v2.0 Default Stylesheet
 *   url: styleshout.com
-*   03-17-2014
+*   07-12-2014
 =====================================================================
 
 TOC:
+
 a. Webfonts and Icon fonts
 b. Reset
 c. Default Styles
    1. Basic
    2. Typography
    3. Links
-   4. Images
+   4. Media
    5. Buttons
    6. Forms
-d. Grid
-e. Others
+   d. Grid
+   e. Others
    1. Clearing
    2. Misc
 
 =====================================================================  */
 
+
 /* ------------------------------------------------------------------ */
 /* a. Webfonts and Icon fonts
- ------------------------------------------------------------------ */
+ -------------------------------------------------------------------- */
 
 @import url("fonts.css");
-@import url("fontello/css/fontello.css");
 @import url("font-awesome/css/font-awesome.min.css");
 
 /* ------------------------------------------------------------------
@@ -102,7 +103,7 @@ ins {
 }
 
 mark {
-   background-color: #A7F4F6;
+   background-color: #F1EE78;
    color: #555;
 }
 
@@ -126,7 +127,8 @@ table {
       Typeplate Typographic Starter Kit - http://typeplate.com/
 /* ------------------------------------------------------------------ */
 
-/*  1. Basic  ------------------------------------------------------- */
+
+/* 1. Basic  ------------------------------------------------------- */
 
 *,
 *:before,
@@ -136,31 +138,29 @@ table {
    box-sizing: border-box;
 }
 
-html {
-   font-size: 62.5%;
-   -webkit-font-smoothing: antialiased;
-}
+html { font-size: 62.5%; }
 
 body {
    background: #fff;
-   font-family: 'opensans-regular', sans-serif;
+   font-family: 'merriweather-regular', sans-serif;
    font-weight: normal;
    font-size: 15px;
    line-height: 30px;
-	color: #838C95;
+	color: #4A5153;	
 
    -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 	-webkit-text-size-adjust: 100%;
 }
 
-/*  2. Typography
-       Vertical rhythm with leading derived from 6
+/* 2. Typography
+      Vertical rhythm with leading derived from 6
 --------------------------------------------------------------------- */
 
 h1, h2, h3, h4, h5, h6 {
-   color: #313131;
-	font-family: 'opensans-bold', sans-serif;
+   color: #444;
+	font-family: 'opensans-semibold', sans-serif;
    font-weight: normal;
+   text-rendering: optimizeLegibility;
 }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
 h1 { font-size: 38px; line-height: 42px; margin-bottom: 12px; letter-spacing: -1px; }
@@ -174,14 +174,14 @@ h6 { font-size: 14px; line-height: 30px; }
 p { margin: 0 0 30px 0; }
 p img { margin: 0; }
 p.lead {
-   font: 19px/36px 'opensans-light', sans-serif;
-   margin-bottom: 18px;
+   font: 18px/33px 'opensans-light', sans-serif;
+   margin-bottom: 18px;   
 }
 
 /* for 'em' and 'strong' tags, font-size and line-height should be same with
 the body tag due to rendering problems in some browsers */
-em { font: 15px/30px 'opensans-italic', sans-serif; }
-strong, b { font: 15px/30px 'opensans-bold', sans-serif; }
+em { font: 15px/30px 'merriweather-italic', sans-serif; }
+strong, b { font: 15px/30px 'merriweather-bold', sans-serif; }
 small { font-size: 11px; line-height: inherit; }
 
 /*	Blockquotes */
@@ -203,10 +203,11 @@ blockquote:before {
 	left: 0;
 }
 blockquote p {
-   font-family: 'librebaskerville-italic', serif;
+   font-family: georgia, serif;
+   font-style: italic;
    padding: 0;
    font-size: 18px;
-   line-height: 36px;
+   line-height: 30px;
 }
 blockquote cite {
    display: block;
@@ -280,7 +281,7 @@ abbr:hover { cursor: help; }
 	color: inherit;
 }
 
-hr { border: solid #E3E3E3; border-width: 1px 0 0; clear: both; margin: 11px 0 30px; height: 0; }
+hr { border: solid #E8E8E8; border-width: 1px 0 0; clear: both; margin: 11px 0 30px; height: 0; }
 
 
 /*  3. Links  ------------------------------------------------------- */
@@ -288,39 +289,40 @@ hr { border: solid #E3E3E3; border-width: 1px 0 0; clear: both; margin: 11px 0 3
 a, a:visited {
    text-decoration: none;
    outline: 0;
-   color: #11ABB0;
-
+   color: #93B876;
+   
    -webkit-transition: color .3s ease-in-out;
    -moz-transition: color .3s ease-in-out;
    -o-transition: color .3s ease-in-out;
    transition: color .3s ease-in-out;
 }
-a:hover, a:focus { color: #313131; }
+a:hover, a:focus { color: #34393A; }
 p a, p a:visited { line-height: inherit; }
 
 
 /*  4. List  --------------------------------------------------------- */
 
 ul, ol { margin-bottom: 24px; margin-top: 12px; }
-ul { list-style: none outside; }
+ul { list-style: none  }
 ol { list-style: decimal; }
-ol, ul.square, ul.circle, ul.disc { margin-left: 30px; }
-ul.square { list-style: square outside; }
-ul.circle { list-style: circle outside; }
-ul.disc { list-style: disc outside; }
-ul ul, ul ol,
-ol ol, ol ul { margin: 6px 0 6px 30px; }
-ul ul li, ul ol li,
-ol ol li, ol ul li { margin-bottom: 6px; }
-li { line-height: 18px; margin-bottom: 12px; }
+ol, ul.square, ul.circle, ul.disc { margin-left: 17px; }
+ul.square { list-style: square }
+ul.circle { list-style: circle }
+ul.disc { list-style: disc }
+ul li { padding-left: 4px; }
 ul.large li { }
 li p { }
+ul ul, ul ol,
+ol ol, ol ul { margin: 6px 0 6px 17px; }
+ul ul li, ul ol li,
+ol ol li, ol ul li { }
+
 
 /* ---------------------------------------------------------------------
 /*  Stats Tab Markup
 
     <ul class="stats-tabs">
-		<li><a href="#">[value]<b>[name]</b></a></li>
+		<li><a href="#">[value]<em>[name]</em></a></li>
 	 </ul>
 
     Extend this object into your markup.
@@ -343,25 +345,25 @@ li p { }
 }
 .stats-tabs li a {
 	display: inline-block;
-	font-size: 22px;
+	font-size: 24px;
 	font-family: 'opensans-bold', sans-serif;
    border: none;
-   color: #313131;
+   color: #444;
 }
 .stats-tabs li a:hover {
-   color:#11ABB0;
+   color: #93B876;
 }
-.stats-tabs li a b {
+.stats-tabs li a em {
 	display: block;
 	margin: 6px 0 0 0;
-	font-size: 13px;
+	font-size: 14px;
 	font-family: 'opensans-regular', sans-serif;
    color: #8B9798;
 }
 
 /* definition list */
 dl { margin: 12px 0; }
-dt { margin: 0; color:#11ABB0; }
+dt { margin: 0; color: #93B876; }
 dd { margin: 0 0 0 20px; }
 
 /* Lining Definition Style Markup */
@@ -411,7 +413,7 @@ dd { margin: 0 0 0 20px; }
    padding: 0;
 }
 .pagination .page-numbers {
-   font: 15px/18px 'opensans-bold', sans-serif;
+   font: 15px/21px 'opensans-bold', sans-serif;
    display: inline-block;
    padding: 6px 10px;
    margin-right: 3px;
@@ -425,10 +427,7 @@ dd { margin: 0 0 0 20px; }
 	-ms-transition: all 200ms ease-in-out;
 	transition: all 200ms ease-in-out;
 
-   -moz-border-radius: 3px;
-   -webkit-border-radius: 3px;
-   -khtml-border-radius: 3px;
-	border-radius: 3px;
+   border-radius: 3px;
 }
 .pagination .page-numbers:hover {
    background: #838A91;
@@ -436,7 +435,7 @@ dd { margin: 0 0 0 20px; }
 }
 .pagination .current,
 .pagination .current:hover {
-   background-color: #11ABB0;
+   background-color: #93B876;
    color: #fff;
 }
 .pagination .inactive,
@@ -446,16 +445,20 @@ dd { margin: 0 0 0 20px; }
 }
 .pagination .prev, .pagination .next {}
 
-/*  5. Images  --------------------------------------------------------- */
+/* 5. Media   --------------------------------------------------------- */
 
-img {
+img,
+video,
+iframe,
+embed,
+object {
    max-width: 100%;
    height: auto;
 }
 img.pull-right { margin: 12px 0px 0px 18px; }
 img.pull-left { margin: 12px 18px 0px 0px; }
 
-/*  6. Buttons  --------------------------------------------------------- */
+/* 6. Buttons  --------------------------------------------------------- */
 
 .button,
 .button:visited,
@@ -463,17 +466,19 @@ button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-   font: 16px/30px 'opensans-bold', sans-serif;
-   background: #11ABB0;
-   display: inline-block;
-	text-decoration: none;
-   letter-spacing: 0;
+   font: 14px/30px 'opensans-bold', sans-serif;
+   background: #9CCF5F;
    color: #fff;
-	padding: 12px 20px;
+   display: inline-block;   
+	text-decoration: none;
+   padding: 12px 20px;
 	margin-bottom: 18px;
    border: none;
    cursor: pointer;
    height: auto;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+   text-align: center;
 
    -webkit-transition: all .2s ease-in-out;
 	-moz-transition: all .2s ease-in-out;
@@ -481,9 +486,6 @@ input[type="button"] {
 	-ms-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
 
-   -moz-border-radius: 3px;
-   -webkit-border-radius: 3px;
-   -khtml-border-radius: 3px;
    border-radius: 3px;
 }
 
@@ -492,7 +494,7 @@ button:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover {
-   background: #3d4145;
+   background: #70A431;
    color: #fff;
 }
 
@@ -501,19 +503,8 @@ button:active,
 input[type="submit"]:active,
 input[type="reset"]:active,
 input[type="button"]:active {
-   background: #3d4145;
+   background: #70A431;
    color: #fff;
-}
-
-.button.full-width,
-button.full-width,
-input[type="submit"].full-width,
-input[type="reset"].full-width,
-input[type="button"].full-width {
-	width: 100%;
-	padding-left: 0 !important;
-	padding-right: 0 !important;
-	text-align: center;
 }
 
 /* Fix for odd Mozilla border & padding issues */
@@ -524,10 +515,15 @@ input::-moz-focus-inner {
 }
 
 
-/*  7. Forms  --------------------------------------------------------- */
+/* 7. Forms  --------------------------------------------------------- */
 
 form { margin-bottom: 24px; }
 fieldset { margin-bottom: 24px; }
+
+input,
+button {
+	-webkit-font-smoothing: antialiased;
+}
 
 input[type="text"],
 input[type="password"],
@@ -535,18 +531,25 @@ input[type="email"],
 textarea,
 select {
    display: block;
-   padding: 18px 15px;
+   padding: 12px 15px;
    margin: 0 0 24px 0;
    border: 0;
    outline: none;
    vertical-align: middle;
-   min-width: 225px;
+   /* min-width: 225px; */
 	max-width: 100%;
-   font-size: 15px;
-   line-height: 24px;
-	color: #647373;
-	background: #D3D9D9;
+   
+	background: #E9EBEE;
+	color: #B1B1B1;
 
+	font-family: 'opensans-regular', sans-serif;
+	font-size: 14px;
+   line-height: 30px;
+   height: 54px;
+   border-radius: 3px;
+}
+textarea {
+	min-height: 162px;
 }
 
 /* select { padding: 0;
@@ -557,11 +560,9 @@ input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
 textarea:focus {
-   color: #B3B7BC;
-	background-color: #3d4145;
+	background: #AFB7BE;
+	color: #fff;
 }
-
-textarea { min-height: 220px; }
 
 label,
 legend {
@@ -578,31 +579,34 @@ legend span {
 
 input[type="checkbox"],
 input[type="radio"] {
-    font-size: 15px;
-    color: #737373;
+   font-size: 15px;
+   color: #3d4145;
 }
 
 input[type="checkbox"] { display: inline; }
 
+
 /* ------------------------------------------------------------------ */
 /* d. Grid
----------------------------------------------------------------------
-   gutter = 40px.
-/* ------------------------------------------------------------------ */
+--------------------------------------------------------------------- */
 
 /* default
 --------------------------------------------------------------- */
 .row {
-   width: 96%;
-   max-width: 1020px;
+   width: 94%;
+   max-width: 1008px;
    margin: 0 auto;
 }
 /* fixed width for IE8 */
-.ie .row { width: 1000px ; }
+.ie .row { width: 1000px; }
 
 .narrow .row { max-width: 980px; }
 
-.row .row { width: auto; max-width: none; margin: 0 -20px; }
+.row .row { 
+	width: auto; 
+	max-width: none; 
+	margin: 0 -18px; 
+}
 
 /* row clearing */
 .row:before,
@@ -610,13 +614,11 @@ input[type="checkbox"] { display: inline; }
     content: " ";
     display: table;
 }
-.row:after {
-    clear: both;
-}
+.row:after { clear: both; }
 
 .column, .columns {
    position: relative;
-   padding: 0 20px;
+   padding: 0 18px;
    min-height: 1px;
    float: left;
 }
@@ -634,18 +636,18 @@ input[type="checkbox"] { display: inline; }
 [class*="column"] + [class*="column"].end { float: right; }
 
 /* column widths */
-.row .one         { width: 8.33333%; }
-.row .two         { width: 16.66667%; }
-.row .three       { width: 25%; }
-.row .four        { width: 33.33333%; }
-.row .five        { width: 41.66667%; }
-.row .six         { width: 50%; }
-.row .seven       { width: 58.33333%; }
-.row .eight       { width: 66.66667%; }
-.row .nine        { width: 75%; }
-.row .ten         { width: 83.33333%; }
-.row .eleven      { width: 91.66667%; }
-.row .twelve      { width: 100%; }
+.one, .row .one        { width: 8.33333%; }
+.two, .row .two        { width: 16.66667%; }
+.three, .row .three    { width: 25%; }
+.four, .row .four      { width: 33.33333%; }
+.five, .row .five      { width: 41.66667%; }
+.six, .row .six        { width: 50%; }
+.seven, .row .seven    { width: 58.33333%; }
+.eight, .row .eight    { width: 66.66667%; }
+.nine, .row .nine      { width: 75%; }
+.ten .row .ten         { width: 83.33333%; }
+.eleven, .row .eleven  { width: 91.66667%; }
+.twelve, .row .twelve  { width: 100%; }
 
 /* Offsets */
 .row .offset-1    { margin-left: 8.33333%; }
@@ -659,30 +661,6 @@ input[type="checkbox"] { display: inline; }
 .row .offset-9    { margin-left: 75%; }
 .row .offset-10   { margin-left: 83.33333%; }
 .row .offset-11   { margin-left: 91.66667%; }
-
-/* Push/Pull */
-.row .push-1      { left: 8.33333%; }
-.row .pull-1      { right: 8.33333%; }
-.row .push-2      { left: 16.66667%; 	}
-.row .pull-2      { right: 16.66667%; }
-.row .push-3      { left: 25%; }
-.row .pull-3      { right: 25%;	}
-.row .push-4      { left: 33.33333%; }
-.row .pull-4      { right: 33.33333%; }
-.row .push-5      { left: 41.66667%; }
-.row .pull-5      { right: 41.66667%; }
-.row .push-6      { left: 50%; }
-.row .pull-6      { right: 50%; }
-.row .push-7      { left: 58.33333%; }
-.row .pull-7      { right: 58.33333%; }
-.row .push-8      { left: 66.66667%; 	}
-.row .pull-8      { right: 66.66667%; }
-.row .push-9      { left: 75%; }
-.row .pull-9      { right: 75%; }
-.row .push-10     { left: 83.33333%; }
-.row .pull-10     { right: 83.33333%; }
-.row .push-11     { left: 91.66667%; }
-.row .pull-11     { right: 91.66667%; }
 
 /* block grids
 --------------------------------------------------------------------- */
@@ -716,23 +694,27 @@ properly.
 
 }
 
-/* mobile wide/smaller tablets
+/* screenwidth less than 768px - mobile/smaller tablets
 --------------------------------------------------------------- */
 @media only screen and (max-width: 767px) {
 
    .row {
-	   width: 460px;
+	   width: 480px;
 	   margin: 0 auto;
       padding: 0;
 	}
    .column, .columns {
-	   width: auto !important;
+	   width: auto !important;      
 	   float: none;
 	   margin-left: 0;
 	   margin-right: 0;
       padding: 0 30px;
    }
-   .row .row { width: auto; max-width: none; margin: 0 -30px; }
+   .row .row { 
+   	width: auto; 
+   	max-width: none; 
+   	margin: 0 -30px; 
+   }
 
    [class*="column"] + [class*="column"]:last-child { float: none; }
    [class*="bgrid"] [class*="column"] + [class*="column"]:last-child { float: none; }
@@ -751,9 +733,9 @@ properly.
    .row .offset-11   { margin-left: 0%; }
 }
 
-/* mobile narrow
+/* screenwidth less than or equal 480px - mobile wide
 --------------------------------------------------------------- */
-@media only screen and (max-width: 460px) {
+@media only screen and (max-width: 480px) {
 
    .row { width: auto; }
 
@@ -775,12 +757,12 @@ properly.
     (http://nicolasgallagher.com/micro-clearfix-hack/
 --------------------------------------------------------------------- */
 
-.cf:before,
-.cf:after {
+.group:before,
+.group:after {
     content: " ";
     display: table;
 }
-.cf:after {
+.group:after {
     clear: both;
 }
 
@@ -801,7 +783,3 @@ properly.
 	margin-right: auto !important;
 	text-align: center !important;
 }
-
-
-
-
